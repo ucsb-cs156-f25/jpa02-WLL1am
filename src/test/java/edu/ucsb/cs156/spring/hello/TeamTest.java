@@ -69,23 +69,25 @@ public class TeamTest {
         t1.addMember("Alice");
         t1.addMember("Bob");
         Team t2 = new Team();
+        t2.setName("A");
+        t2.addMember("Alice");
+        t2.addMember("Charlie");
+        assertFalse(t1.equals(t2));
+    }
+
+    @Test
+    public void equals_diff_name_same_members() {
+        Team t1 = new Team();
+        t1.setName("A");
+        t1.addMember("Alice");
+        t1.addMember("Bob");
+        Team t2 = new Team();
         t2.setName("B");
         t2.addMember("Alice");
         t2.addMember("Bob");
         assertFalse(t1.equals(t2));
     }
 
-    // @Test
-    // public void equals_diff_name_same_members() {
-
-    // }
-
-    // @Test public void
-    // testEqualsSameNameSameMembers() {
-    //     Team team1 = new Team("A", List.of("Alice", "Bob"));
-    //     Team team2 = new Team("A", List.of("Alice", "Bob"));
-    //     assertTrue(team1.equals(team2));
-    // }
 
 
     @Test
